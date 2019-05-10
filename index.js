@@ -1,6 +1,6 @@
 const Discord = require('discord.io');
 const logger = require('winston');
-const auth = require('auth.json');
+const auth = require('./auth.json');
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -23,7 +23,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '!') {
         let args = message.substring(1).split(' ');
         let cmd = args[0];
-
+        
         args = args.splice(1);
         switch(cmd) {
             // !ping
@@ -33,7 +33,42 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Pong!'
                 });
             break;
+
             // Just add any case commands if you want to..
+            case 'help':
+              bot.sendMessage({
+                to: channelID,
+                message: 'Please enter you credit card number:'
+              });
+            break;
+
+            case 'jens':
+              bot.sendMessage({
+                to: channelID,
+                message: 'Should shower!'
+              });
+            break;
+
+            case 'whosyourdaddy?':
+              bot.sendMessage({
+                to: channelID,
+                message: 'Thisen!'
+              });
+            break;
+
+            case 'crall':
+              bot.sendMessage({
+                to: channelID,
+                message: 'Har gula tänder!'
+              });
+            break;
+
+            case 'kul':
+              bot.sendMessage({
+                to: channelID,
+                message: '\:smile:'
+              });
+            break;
          }
      }
 });
