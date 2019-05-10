@@ -1,0 +1,2 @@
+# Stridsberg
+Discord_bot
